@@ -324,15 +324,9 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/code/Erkenly/dashboardView.h",
+			"C:/code/Erkenly/lotoverview.h",
 			"MU",
-			"EWIEGA46WW/moc_dashboardView.cpp",
-			null
-		],
-		[
-			"C:/code/Erkenly/lotOverview.h",
-			"MU",
-			"EWIEGA46WW/moc_lotOverview.cpp",
+			"EWIEGA46WW/moc_lotoverview.cpp",
 			null
 		],
 		[
@@ -340,7 +334,8 @@
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
-		]
+		],
+		[ "C:/code/Erkenly/mapview.h", "MU", "EWIEGA46WW/moc_mapview.cpp", null ]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/include",
@@ -413,10 +408,10 @@
 	"SETTINGS_FILE" : "C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/Erkenly_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "C:/code/Erkenly/dashboardView.cpp", "MU", null ],
-		[ "C:/code/Erkenly/lotOverview.cpp", "MU", null ],
+		[ "C:/code/Erkenly/lotoverview.cpp", "MU", null ],
 		[ "C:/code/Erkenly/main.cpp", "MU", null ],
-		[ "C:/code/Erkenly/mainwindow.cpp", "MU", null ]
+		[ "C:/code/Erkenly/mainwindow.cpp", "MU", null ],
+		[ "C:/code/Erkenly/mapview.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

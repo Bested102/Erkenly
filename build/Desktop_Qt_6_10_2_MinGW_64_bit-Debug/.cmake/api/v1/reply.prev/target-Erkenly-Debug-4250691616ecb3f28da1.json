@@ -387,11 +387,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "Erkenly_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "Erkenly_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "Erkenly_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "Erkenly::@6890427a1f51a3e7e1df",
@@ -577,13 +577,13 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "dashboardView.h",
+			"path" : "mapView.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "dashboardView.cpp",
+			"path" : "mapView.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -599,12 +599,12 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "dashboardView.ui",
+			"path" : "mapView.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
-			"path" : "lotOverview.ui",
+			"path" : "lotoverview.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -616,13 +616,13 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/include/ui_dashboardView.h",
+			"path" : "build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/include/ui_mapView.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/include/ui_lotOverview.h",
+			"path" : "build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/include/ui_lotoverview.h",
 			"sourceGroupIndex" : 1
 		},
 		{

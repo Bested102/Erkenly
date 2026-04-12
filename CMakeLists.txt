@@ -23,10 +23,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Erkenly
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        dashboardView.h dashboardView.cpp
-        lotOverview.h lotOverview.cpp
-        dashboardView.ui
-        lotOverview.ui
+        mapview.h mapview.cpp
+        lotoverview.h lotoverview.cpp
+        mapview.ui
+        lotoverview.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Erkenly APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

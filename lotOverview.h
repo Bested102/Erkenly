@@ -1,15 +1,25 @@
 #ifndef LOTOVERVIEW_H
 #define LOTOVERVIEW_H
 
-#include <QWidget>
+#include <QMainWindow>
 
-class lotOverview : public QWidget
+class QTableWidget;
+class MapView;
+class QCloseEvent;
+
+class LotOverview : public QMainWindow
 {
-    Q_OBJECT
 public:
-    explicit lotOverview(QWidget *parent = nullptr);
+    explicit LotOverview(QWidget *previousWindow = nullptr);
+    ~LotOverview() override = default;
 
-signals:
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
+private:
+    QWidget *m_previousWindow = nullptr;
+    QTableWidget *lotsTable = nullptr;
+    MapView *mapViewWindow = nullptr;
 };
 
 #endif // LOTOVERVIEW_H

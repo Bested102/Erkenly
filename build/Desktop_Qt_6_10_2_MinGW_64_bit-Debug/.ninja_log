@@ -1,0 +1,24 @@
+# ninja log v6
+4	400	7977269395618285	Erkenly_autogen/timestamp	fc9732583feb5cbb
+4	400	7977269395618285	Erkenly_autogen/mocs_compilation.cpp	fc9732583feb5cbb
+4	400	7977269395618285	C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/timestamp	fc9732583feb5cbb
+4	400	7977269395618285	C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/mocs_compilation.cpp	fc9732583feb5cbb
+411	1467	7977269396038277	CMakeFiles/Erkenly.dir/lotoverview.cpp.obj	25202891f637342c
+409	1467	7977269396018277	CMakeFiles/Erkenly.dir/mapview.cpp.obj	82faf1b6ff045aff
+405	1517	7977269395978272	CMakeFiles/Erkenly.dir/main.cpp.obj	227ec45916fa190d
+403	1518	7977269395958266	CMakeFiles/Erkenly.dir/Erkenly_autogen/mocs_compilation.cpp.obj	863a5e772f7191a9
+13	78	7977272812537338	Erkenly_autogen/timestamp	fc9732583feb5cbb
+13	78	7977272812537338	Erkenly_autogen/mocs_compilation.cpp	fc9732583feb5cbb
+13	78	7977272812537338	C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/timestamp	fc9732583feb5cbb
+13	78	7977272812537338	C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/mocs_compilation.cpp	fc9732583feb5cbb
+79	117	7977272812777332	CMakeFiles/Erkenly.dir/Erkenly_autogen/mocs_compilation.cpp.obj	863a5e772f7191a9
+81	1330	7977272812807346	CMakeFiles/Erkenly.dir/main.cpp.obj	227ec45916fa190d
+83	1359	7977272812827344	CMakeFiles/Erkenly.dir/mainwindow.cpp.obj	35fe813f5a0ea8d6
+5	64	7977274441556999	Erkenly_autogen/timestamp	fc9732583feb5cbb
+5	64	7977274441556999	Erkenly_autogen/mocs_compilation.cpp	fc9732583feb5cbb
+5	64	7977274441556999	C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/timestamp	fc9732583feb5cbb
+5	64	7977274441556999	C:/code/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/Erkenly_autogen/mocs_compilation.cpp	fc9732583feb5cbb
+65	1257	7977274442156948	CMakeFiles/Erkenly.dir/mainwindow.cpp.obj	35fe813f5a0ea8d6
+67	1389	7977274442176943	CMakeFiles/Erkenly.dir/mapview.cpp.obj	82faf1b6ff045aff
+69	1648	7977274442196953	CMakeFiles/Erkenly.dir/lotoverview.cpp.obj	25202891f637342c
+1649	1793	7977274457994734	Erkenly.exe	8406b543f44ccab2
