@@ -9,64 +9,89 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
 
-set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+add_library(erkenly_domain STATIC
+    domain/Gate.hpp
+    domain/Gate.cpp
+    domain/ParkingLot.hpp
+    domain/ParkingLot.cpp
+    domain/ParkingModel.hpp
+    domain/ParkingModel.cpp
+    domain/ParkingSpot.hpp
+    domain/ParkingSpot.cpp
+)
+
+target_include_directories(erkenly_domain PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/domain
+)
+
+add_library(erkenly_networking STATIC
+    networking/ParkingClient.h
+    networking/ParkingClient.cpp
+)
+
+target_include_directories(erkenly_networking PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/networking
+)
+
+target_link_libraries(erkenly_networking PUBLIC
+    Qt${QT_VERSION_MAJOR}::Network
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Erkenly
         MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-        mapview.h mapview.cpp
-        lotoverview.h lotoverview.cpp
-        mapview.ui
-        lotoverview.ui
+
+        ui/main.cpp
+        ui/mainwindow.h
+        ui/mainwindow.cpp
+        ui/mainwindow.ui
+        ui/lotoverview.h
+        ui/lotoverview.cpp
+        ui/lotOverview.ui
+        ui/mapview.h
+        ui/mapview.cpp
+        ui/mapview.ui
+
+        app/AppController.h
+        app/AppController.cpp
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET Erkenly APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
-    if(ANDROID)
-        add_library(Erkenly SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(Erkenly
-            ${PROJECT_SOURCES}
-        )
-    endif()
+    add_executable(Erkenly
+        ui/main.cpp
+        ui/mainwindow.h
+        ui/mainwindow.cpp
+        ui/mainwindow.ui
+        ui/lotoverview.h
+        ui/lotoverview.cpp
+        ui/lotOverview.ui
+        ui/mapview.h
+        ui/mapview.cpp
+        ui/mapview.ui
+
+        app/AppController.h
+        app/AppController.cpp
+    )
 endif()
 
-target_link_libraries(Erkenly PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.Erkenly)
-endif()
-set_target_properties(Erkenly PROPERTIES
-    ${BUNDLE_ID_OPTION}
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
+target_include_directories(Erkenly PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/app
+    ${CMAKE_CURRENT_SOURCE_DIR}/domain
+    ${CMAKE_CURRENT_SOURCE_DIR}/networking
 )
 
-include(GNUInstallDirs)
-install(TARGETS Erkenly
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+target_link_libraries(Erkenly PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Network
+    erkenly_domain
+    erkenly_networking
+)
+
+set_target_properties(Erkenly PROPERTIES
+    WIN32_EXECUTABLE TRUE
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)

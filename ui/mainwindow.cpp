@@ -1,18 +1,21 @@
 #include "mainwindow.h"
 #include "lotoverview.h"
+#include "AppController.h"
 
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QLabel>
-#include <QSpacerItem>
 #include <QFont>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     setWindowTitle("Campus Parking Navigator");
     resize(800, 500);
+
+    controller = new AppController(this);
 
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
@@ -31,10 +34,13 @@ MainWindow::MainWindow(QWidget *parent)
     titleLabel->setAlignment(Qt::AlignCenter);
 
     auto *subtitleLabel = new QLabel(
-        "View campus parking lots and open a lot map",
+        "Loads parking data from the server",
         this
         );
     subtitleLabel->setAlignment(Qt::AlignCenter);
+
+    statusLabel = new QLabel("Status: Disconnected", this);
+    statusLabel->setAlignment(Qt::AlignCenter);
 
     auto *viewLotsButton = new QPushButton("View Parking Lots", this);
     viewLotsButton->setMinimumHeight(45);
@@ -44,15 +50,24 @@ MainWindow::MainWindow(QWidget *parent)
 
     layout->addWidget(titleLabel);
     layout->addWidget(subtitleLabel);
+    layout->addWidget(statusLabel);
     layout->addSpacing(20);
     layout->addWidget(viewLotsButton);
     layout->addWidget(exitButton);
 
     layout->addStretch();
 
+    connect(controller, &AppController::connectionStatusChanged, this, [this](const QString &status) {
+        statusLabel->setText("Status: " + status);
+    });
+
+    connect(controller, &AppController::errorOccurred, this, [this](const QString &message) {
+        QMessageBox::warning(this, "Network Error", message);
+    });
+
     connect(viewLotsButton, &QPushButton::clicked, this, [this]() {
         if (!lotOverviewWindow) {
-            lotOverviewWindow = new LotOverview(this);
+            lotOverviewWindow = new LotOverview(controller, this);
 
             connect(lotOverviewWindow, &QObject::destroyed, this, [this]() {
                 lotOverviewWindow = nullptr;
@@ -68,4 +83,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(exitButton, &QPushButton::clicked, this, [this]() {
         close();
     });
+
+    controller->connectToServer("127.0.0.1", 5555);
 }

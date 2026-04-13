@@ -1,3 +1,0 @@
-here should be:
-ParkingServer(h/cpp)
-defaults model either computed using (CampusInitializer.cpp) or a static JSON file
