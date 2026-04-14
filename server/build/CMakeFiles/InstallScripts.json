@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/code/server/build-mingw/cmake_install.cmake"
+		"D:/AUC/CS2 Lab/Erkenly/server/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

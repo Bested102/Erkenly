@@ -1,0 +1,132 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Erkenly",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Erkenly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Erkenly-Debug-df4ada6aab8c61756cff.json",
+					"name" : "Erkenly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Erkenly_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Erkenly_autogen-Debug-d49e1094c86b3ac1b607.json",
+					"name" : "Erkenly_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Erkenly_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Erkenly_autogen_timestamp_deps-Debug-691b15bc05b59403fa9a.json",
+					"name" : "Erkenly_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "erkenly_domain::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-erkenly_domain-Debug-cd310ed06e7f61519d41.json",
+					"name" : "erkenly_domain",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "erkenly_domain_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-erkenly_domain_autogen-Debug-e56226f2b497c7295a1f.json",
+					"name" : "erkenly_domain_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "erkenly_domain_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-erkenly_domain_autogen_timestamp_deps-Debug-e7a25df30aace2957a9c.json",
+					"name" : "erkenly_domain_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "erkenly_networking::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-erkenly_networking-Debug-ff2ddb1bc078cbdd5822.json",
+					"name" : "erkenly_networking",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "erkenly_networking_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-erkenly_networking_autogen-Debug-83ec0d61fc19ed48a8ae.json",
+					"name" : "erkenly_networking_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "erkenly_networking_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-erkenly_networking_autogen_timestamp_deps-Debug-0bb84d76e4eba425d70d.json",
+					"name" : "erkenly_networking_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug",
+		"source" : "D:/AUC/CS2 Lab/Erkenly"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

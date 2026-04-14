@@ -1,0 +1,2 @@
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc liberkenly_networking.a CMakeFiles/erkenly_networking.dir/erkenly_networking_autogen/mocs_compilation.cpp.obj CMakeFiles/erkenly_networking.dir/networking/ParkingClient.cpp.obj
+C:\Qt\Tools\mingw1310_64\bin\ranlib.exe liberkenly_networking.a
