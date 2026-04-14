@@ -15,6 +15,27 @@ using json = nlohmann::json;
 
 class ParkingDatabase {
 public:
+void reloadFromDisk()
+{
+    std::lock_guard<std::mutex> lock(mutex_);
+
+    if (!std::filesystem::exists(filePath_)) {
+        data_ = makeDefaultData();
+        saveLocked();
+        return;
+    }
+
+    std::ifstream input(filePath_);
+    if (!input) {
+        throw std::runtime_error("failed to open data.json");
+    }
+
+    input >> data_;
+
+    if (!data_.contains("lots") || !data_["lots"].is_array()) {
+        throw std::runtime_error("data.json must contain a lots array");
+    }
+}
     explicit ParkingDatabase(std::string filePath)
         : filePath_(std::move(filePath))
     {
@@ -83,27 +104,11 @@ private:
     json data_;
 
     static json makeDefaultData()
-    {
-        return json{
-            {"lots", json::array({
-                {
-                    {"id", "lotA"},
-                    {"name", "Lot A"},
-                    {"spots", json::array({
-                        {{"id", "A1"}, {"lotId", "lotA"}, {"x", 0}, {"y", 0}, {"occupied", false}, {"graphNodeId", -1}},
-                        {{"id", "A2"}, {"lotId", "lotA"}, {"x", 1}, {"y", 0}, {"occupied", true},  {"graphNodeId", -1}},
-                        {{"id", "A3"}, {"lotId", "lotA"}, {"x", 2}, {"y", 0}, {"occupied", false}, {"graphNodeId", -1}},
-                        {{"id", "A4"}, {"lotId", "lotA"}, {"x", 0}, {"y", 1}, {"occupied", true},  {"graphNodeId", -1}},
-                        {{"id", "A5"}, {"lotId", "lotA"}, {"x", 1}, {"y", 1}, {"occupied", false}, {"graphNodeId", -1}},
-                        {{"id", "A6"}, {"lotId", "lotA"}, {"x", 2}, {"y", 1}, {"occupied", false}, {"graphNodeId", -1}}
-                    })},
-                    {"gates", json::array({
-                        {{"id", "G1"}, {"lotId", "lotA"}, {"x", -1}, {"y", 0}, {"graphNodeId", -1}}
-                    })}
-                }
-            })}
-        };
-    }
+{
+    return json{
+        {"lots", json::array()}
+    };
+}
 
     static json makeError(const std::string& message)
     {
@@ -153,8 +158,9 @@ json handleRequest(const json& request, ParkingDatabase& database)
     const std::string type = request["type"].get<std::string>();
 
     if (type == "get_snapshot") {
-        return database.makeSnapshotResponse();
-    }
+    database.reloadFromDisk();
+    return database.makeSnapshotResponse();
+}
 
     if (type == "report_spot") {
         if (!request.contains("lotId") || !request["lotId"].is_string()) {
@@ -245,7 +251,7 @@ int main(int argc, char* argv[])
                     handleClient(std::move(clientSocket), database);
                 },
                 std::move(socket)
-                ).detach();
+            ).detach();
         }
     } catch (const std::exception& e) {
         std::cerr << "Server fatal error: " << e.what() << '\n';

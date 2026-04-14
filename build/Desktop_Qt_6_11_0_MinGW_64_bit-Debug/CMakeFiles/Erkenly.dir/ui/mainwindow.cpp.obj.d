@@ -409,6 +409,7 @@ CMakeFiles/Erkenly.dir/ui/mainwindow.cpp.obj: \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qlayout.h \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qlayoutitem.h \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qgridlayout.h \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/QHBoxLayout \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -422,4 +423,7 @@ CMakeFiles/Erkenly.dir/ui/mainwindow.cpp.obj: \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/QMessageBox \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qmessagebox.h \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qdialog.h \
- C:/Qt/6.11.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/QGraphicsDropShadowEffect \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/qgraphicseffect.h \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/QFrame

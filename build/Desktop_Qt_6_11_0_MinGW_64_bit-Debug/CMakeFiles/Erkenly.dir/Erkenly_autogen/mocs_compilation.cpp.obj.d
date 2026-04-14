@@ -406,4 +406,6 @@ CMakeFiles/Erkenly.dir/Erkenly_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.11.0/mingw_64/include/QtWidgets/qsizepolicy.h \
  C:/Qt/6.11.0/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.11.0/mingw_64/include/QtGui/qbitmap.h \
- C:/Qt/6.11.0/mingw_64/include/QtWidgets/qtabwidget.h
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/qtabwidget.h \
+ D:\AUC\CS2\ Lab\Erkenly\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\Erkenly_autogen\UYX5XTB5RZ/moc_mapview.cpp \
+ D:/AUC/CS2\ Lab/Erkenly/ui/mapview.h

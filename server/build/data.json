@@ -25,7 +25,7 @@
                     "graphNodeId": -1,
                     "id": "A2",
                     "lotId": "lotA",
-                    "occupied": false,
+                    "occupied": true,
                     "x": 1,
                     "y": 0
                 },
@@ -33,7 +33,7 @@
                     "graphNodeId": -1,
                     "id": "A3",
                     "lotId": "lotA",
-                    "occupied": false,
+                    "occupied": true,
                     "x": 2,
                     "y": 0
                 },
@@ -57,9 +57,33 @@
                     "graphNodeId": -1,
                     "id": "A6",
                     "lotId": "lotA",
-                    "occupied": false,
+                    "occupied": true,
                     "x": 2,
                     "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A7",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 2,
+                    "y": 2
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A8",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 3,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A9",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 30,
+                    "y": 2
                 }
             ]
         }

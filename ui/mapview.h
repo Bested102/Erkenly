@@ -7,9 +7,12 @@
 class QCloseEvent;
 class QGridLayout;
 class AppController;
+class QScrollArea;
 
 class MapView : public QMainWindow
 {
+    Q_OBJECT
+
 public:
     explicit MapView(const QString &lotId,
                      const QString &lotName,
@@ -29,6 +32,7 @@ private:
     QString currentLotId;
     QString currentLotName;
 
+    QWidget *asphaltContainer = nullptr;
     QGridLayout *spotsGrid = nullptr;
 };
 

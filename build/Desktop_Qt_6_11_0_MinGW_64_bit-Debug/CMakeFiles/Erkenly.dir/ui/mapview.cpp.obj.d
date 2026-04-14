@@ -450,4 +450,9 @@ CMakeFiles/Erkenly.dir/ui/mapview.cpp.obj: \
  C:/Qt/6.11.0/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.11.0/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.11.0/mingw_64/include/QtGui/QFont \
- C:/Qt/6.11.0/mingw_64/include/QtWidgets/QLayout
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/QLayout \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/QScrollArea \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/qscrollarea.h \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/QGraphicsDropShadowEffect \
+ C:/Qt/6.11.0/mingw_64/include/QtWidgets/qgraphicseffect.h
