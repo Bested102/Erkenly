@@ -17,7 +17,7 @@
                     "graphNodeId": -1,
                     "id": "A1",
                     "lotId": "lotA",
-                    "occupied": false,
+                    "occupied": true,
                     "x": 0,
                     "y": 0
                 },
@@ -57,7 +57,7 @@
                     "graphNodeId": -1,
                     "id": "A6",
                     "lotId": "lotA",
-                    "occupied": true,
+                    "occupied": false,
                     "x": 2,
                     "y": 1
                 },
@@ -73,7 +73,7 @@
                     "graphNodeId": -1,
                     "id": "A8",
                     "lotId": "lotA",
-                    "occupied": true,
+                    "occupied": false,
                     "x": 3,
                     "y": 1
                 },
