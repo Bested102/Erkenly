@@ -1,0 +1,2 @@
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc liberkenly_domain.a CMakeFiles/erkenly_domain.dir/erkenly_domain_autogen/mocs_compilation.cpp.obj CMakeFiles/erkenly_domain.dir/domain/Gate.cpp.obj CMakeFiles/erkenly_domain.dir/domain/ParkingLot.cpp.obj CMakeFiles/erkenly_domain.dir/domain/ParkingModel.cpp.obj CMakeFiles/erkenly_domain.dir/domain/ParkingSpot.cpp.obj
+C:\Qt\Tools\mingw1310_64\bin\ranlib.exe liberkenly_domain.a

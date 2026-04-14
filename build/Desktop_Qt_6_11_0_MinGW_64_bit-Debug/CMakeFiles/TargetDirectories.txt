@@ -1,0 +1,11 @@
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/erkenly_domain.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/erkenly_networking.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Erkenly.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/erkenly_domain_autogen_timestamp_deps.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/erkenly_domain_autogen.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/erkenly_networking_autogen_timestamp_deps.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/erkenly_networking_autogen.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Erkenly_autogen_timestamp_deps.dir
+D:/AUC/CS2 Lab/Erkenly/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/Erkenly_autogen.dir
