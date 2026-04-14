@@ -47,13 +47,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ui/main.cpp
         ui/mainwindow.h
         ui/mainwindow.cpp
-        ui/mainwindow.ui
+
         ui/lotoverview.h
         ui/lotoverview.cpp
-        ui/lotOverview.ui
+
         ui/mapview.h
         ui/mapview.cpp
-        ui/mapview.ui
+
 
         app/AppController.h
         app/AppController.cpp
@@ -63,13 +63,10 @@ else()
         ui/main.cpp
         ui/mainwindow.h
         ui/mainwindow.cpp
-        ui/mainwindow.ui
         ui/lotoverview.h
         ui/lotoverview.cpp
-        ui/lotOverview.ui
         ui/mapview.h
         ui/mapview.cpp
-        ui/mapview.ui
 
         app/AppController.h
         app/AppController.cpp
