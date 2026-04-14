@@ -1,0 +1,67 @@
+{
+    "lots": [
+        {
+            "gates": [
+                {
+                    "graphNodeId": -1,
+                    "id": "G1",
+                    "lotId": "lotA",
+                    "x": -1,
+                    "y": 0
+                }
+            ],
+            "id": "lotA",
+            "name": "Lot A",
+            "spots": [
+                {
+                    "graphNodeId": -1,
+                    "id": "A1",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A2",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 1,
+                    "y": 0
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A3",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 2,
+                    "y": 0
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A4",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 0,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A5",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 1,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A6",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 2,
+                    "y": 1
+                }
+            ]
+        }
+    ]
+}

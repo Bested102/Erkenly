@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/code/server/build-mingw/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
