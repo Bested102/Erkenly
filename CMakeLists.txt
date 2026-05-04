@@ -21,6 +21,9 @@ add_library(erkenly_domain STATIC
     domain/ParkingModel.cpp
     domain/ParkingSpot.hpp
     domain/ParkingSpot.cpp
+    domain/coordinate.h
+    domain/graph.h domain/graph.cpp
+    domain/routeplanner.h domain/routeplanner.cpp
 )
 
 target_include_directories(erkenly_domain PUBLIC
@@ -57,6 +60,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         app/AppController.h
         app/AppController.cpp
+        domain/coordinate.h
     )
 else()
     add_executable(Erkenly

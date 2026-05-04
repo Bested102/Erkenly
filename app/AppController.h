@@ -2,9 +2,13 @@
 
 #include <QObject>
 #include <QString>
+#include <QStringList>
+#include <QList>
+#include <QPointF>
 
 #include "ParkingModel.hpp"
 #include "ParkingClient.h"
+#include "routeplanner.h"
 
 class AppController : public QObject
 {
@@ -18,7 +22,26 @@ public:
     void reportSpot(const QString &lotId, const QString &spotId, bool occupied);
 
     const ParkingModel& getModel() const;
+    ParkingModel& getModel();
     QString getConnectionStatus() const;
+
+    // Route planning: returns path node IDs from gateId to nearest free spot.
+    // chosenSpot is set to the target spot ID. Returns empty list if no route found.
+    QStringList findRouteToNearestFreeSpot(const QString &lotId,
+                                           const QString &gateId,
+                                           QString &chosenSpot) const;
+
+    // Route planning: returns path node IDs from start to goal.
+    QStringList findRoute(const QString &lotId,
+                          const QString &startId,
+                          const QString &goalId) const;
+
+    // Converts a route node list into drawable map coordinates.
+    QList<QPointF> routeGeometry(const QString &lotId,
+                                 const QStringList &path) const;
+
+    double routeDistance(const QString &lotId,
+                         const QStringList &path) const;
 
 signals:
     void modelChanged();

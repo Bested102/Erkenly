@@ -7,12 +7,16 @@ void ParkingModel::addLot(const ParkingLot& lot) {
 }
 
 ParkingLot* ParkingModel::getLot(const std::string& lotId) {
-
     auto it = lots.find(lotId);
-
     if (it != lots.end())
         return &it->second;
+    return nullptr;
+}
 
+const ParkingLot* ParkingModel::getLot(const std::string& lotId) const {
+    auto it = lots.find(lotId);
+    if (it != lots.end())
+        return &it->second;
     return nullptr;
 }
 

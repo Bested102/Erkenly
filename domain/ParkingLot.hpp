@@ -21,7 +21,7 @@ public:
     ParkingSpot* getSpot(const std::string& spotId);
 
     const std::unordered_map<std::string, ParkingSpot>& getSpots() const;
-    std::vector<Gate>& getGates();
+    const std::vector<Gate>& getGates() const;
 
     int getTotalSpots() const;
     int getFreeSpots() const;

@@ -7,6 +7,7 @@
 #include "ParkingLot.hpp"
 #include "ParkingSpot.hpp"
 #include "Gate.hpp"
+#include "routeplanner.h"
 
 AppController::AppController(QObject *parent)
     : QObject(parent)
@@ -36,6 +37,11 @@ void AppController::reportSpot(const QString &lotId, const QString &spotId, bool
 }
 
 const ParkingModel& AppController::getModel() const
+{
+    return model;
+}
+
+ParkingModel& AppController::getModel()
 {
     return model;
 }
@@ -73,6 +79,86 @@ void AppController::onAckReceived(const QByteArray &data)
 void AppController::onClientError(const QString &message)
 {
     emit errorOccurred(message);
+}
+
+QStringList AppController::findRouteToNearestFreeSpot(const QString &lotId,
+                                                      const QString &gateId,
+                                                      QString &chosenSpot) const
+{
+    const std::string lotIdStd = lotId.toStdString();
+    const ParkingLot *lot = model.getLot(lotIdStd);
+    if (!lot) return {};
+
+    RoutePlanner planner(*lot);
+
+    // Build the free-spots map: spotId -> isFree
+    std::unordered_map<std::string, bool> freeSpots;
+    for (const auto &pair : lot->getSpots())
+        freeSpots[pair.first] = !pair.second.isOccupied();
+
+    std::string chosen;
+    const auto path = planner.routeToNearestFreeSpot(
+        gateId.toStdString(), chosen, freeSpots);
+
+    chosenSpot = QString::fromStdString(chosen);
+
+    QStringList result;
+    for (const auto &node : path)
+        result << QString::fromStdString(node);
+    return result;
+}
+
+QStringList AppController::findRoute(const QString &lotId,
+                                     const QString &startId,
+                                     const QString &goalId) const
+{
+    const std::string lotIdStd = lotId.toStdString();
+    const ParkingLot *lot = model.getLot(lotIdStd);
+    if (!lot) return {};
+
+    RoutePlanner planner(*lot);
+    const auto path = planner.route(startId.toStdString(), goalId.toStdString());
+
+    QStringList result;
+    for (const auto &node : path)
+        result << QString::fromStdString(node);
+    return result;
+}
+
+
+QList<QPointF> AppController::routeGeometry(const QString &lotId,
+                                            const QStringList &path) const
+{
+    QList<QPointF> points;
+
+    const ParkingLot *lot = model.getLot(lotId.toStdString());
+    if (!lot) return points;
+
+    RoutePlanner planner(*lot);
+    for (const QString &id : path) {
+        Coordinate coordinate;
+        if (planner.nodeCoordinate(id.toStdString(), coordinate)) {
+            points.append(QPointF(coordinate.x, coordinate.y));
+        }
+    }
+
+    return points;
+}
+
+double AppController::routeDistance(const QString &lotId,
+                                    const QStringList &path) const
+{
+    const ParkingLot *lot = model.getLot(lotId.toStdString());
+    if (!lot) return 0.0;
+
+    RoutePlanner planner(*lot);
+    std::vector<std::string> nodes;
+    nodes.reserve(path.size());
+    for (const QString &id : path) {
+        nodes.push_back(id.toStdString());
+    }
+
+    return planner.pathDistance(nodes);
 }
 
 void AppController::rebuildModelFromSnapshot(const QByteArray &data)

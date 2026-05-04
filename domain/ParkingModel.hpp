@@ -13,6 +13,7 @@ public:
     void addLot(const ParkingLot& lot);
 
     ParkingLot* getLot(const std::string& lotId);
+    const ParkingLot* getLot(const std::string& lotId) const;
 
     ParkingSpot* getSpot(const std::string& lotId,
                          const std::string& spotId);

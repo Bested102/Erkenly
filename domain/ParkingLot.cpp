@@ -32,7 +32,8 @@ ParkingSpot* ParkingLot::getSpot(const std::string& spotId) {
     return nullptr;
 }
 
-std::vector<Gate>& ParkingLot::getGates() {
+const std::vector<Gate>& ParkingLot::getGates() const
+{
     return gates;
 }
 
@@ -52,7 +53,8 @@ int ParkingLot::getFreeSpots() const {
     return count;
 }
 
-const std::unordered_map<std::string, ParkingSpot>& ParkingLot::getSpots() const {
+const std::unordered_map<std::string, ParkingSpot>& ParkingLot::getSpots() const
+{
     return spots;
 }
 
