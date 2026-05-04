@@ -43,8 +43,8 @@ jobs:
         run: |
           ctest --test-dir build --output-on-failure
 
-  build-server:
-    name: Build Boost.Asio server
+    build-server:
+    name: Build Boost.Asio Redis server
     runs-on: ubuntu-latest
 
     steps:
@@ -54,10 +54,11 @@ jobs:
       - name: Install server dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ninja-build build-essential libboost-all-dev
+          sudo apt-get install -y ninja-build build-essential libboost-all-dev libhiredis-dev pkg-config
 
       - name: Configure server
         run: |
+          rm -rf server/build
           cmake -S server -B server/build -G Ninja -DCMAKE_BUILD_TYPE=Debug
 
       - name: Build server
