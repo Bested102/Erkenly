@@ -1,0 +1,11 @@
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/erkenly_domain.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/erkenly_networking.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/Erkenly.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/erkenly_domain_autogen_timestamp_deps.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/erkenly_domain_autogen.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/erkenly_networking_autogen_timestamp_deps.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/erkenly_networking_autogen.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/Erkenly_autogen_timestamp_deps.dir
+C:/Users/Legion/Downloads/Erkenly_empty_cells_roads/Erkenly/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/Erkenly_autogen.dir
