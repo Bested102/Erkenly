@@ -7,7 +7,14 @@
                     "id": "G1",
                     "lotId": "lotA",
                     "x": -1,
-                    "y": 0
+                    "y": 5
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "G2",
+                    "lotId": "lotA",
+                    "x": 10,
+                    "y": 5
                 }
             ],
             "id": "lotA",
@@ -17,7 +24,7 @@
                     "graphNodeId": -1,
                     "id": "A1",
                     "lotId": "lotA",
-                    "occupied": false,
+                    "occupied": true,
                     "x": 0,
                     "y": 0
                 },
@@ -42,48 +49,360 @@
                     "id": "A4",
                     "lotId": "lotA",
                     "occupied": true,
-                    "x": 0,
-                    "y": 1
+                    "x": 3,
+                    "y": 0
                 },
                 {
                     "graphNodeId": -1,
                     "id": "A5",
                     "lotId": "lotA",
-                    "occupied": false,
-                    "x": 1,
-                    "y": 1
+                    "occupied": true,
+                    "x": 5,
+                    "y": 0
                 },
                 {
                     "graphNodeId": -1,
                     "id": "A6",
                     "lotId": "lotA",
-                    "occupied": true,
-                    "x": 2,
-                    "y": 1
+                    "occupied": false,
+                    "x": 6,
+                    "y": 0
                 },
                 {
                     "graphNodeId": -1,
                     "id": "A7",
                     "lotId": "lotA",
-                    "occupied": true,
-                    "x": 2,
-                    "y": 2
+                    "occupied": false,
+                    "x": 7,
+                    "y": 0
                 },
                 {
                     "graphNodeId": -1,
                     "id": "A8",
                     "lotId": "lotA",
                     "occupied": true,
-                    "x": 3,
-                    "y": 1
+                    "x": 8,
+                    "y": 0
                 },
                 {
                     "graphNodeId": -1,
                     "id": "A9",
                     "lotId": "lotA",
                     "occupied": true,
+                    "x": 0,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A10",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 1,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A11",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 2,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A12",
+                    "lotId": "lotA",
+                    "occupied": true,
                     "x": 3,
-                    "y": 2
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A13",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 5,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A14",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 6,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A15",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 7,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A16",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 8,
+                    "y": 1
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A17",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 0,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A18",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 1,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A19",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 2,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A20",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 3,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A21",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 5,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A22",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 6,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A23",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 7,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A24",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 8,
+                    "y": 3
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A25",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 0,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A26",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 1,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A27",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 2,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A28",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 3,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A29",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 5,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A30",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 6,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A31",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 7,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A32",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 8,
+                    "y": 4
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A33",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 0,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A34",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 1,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A35",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 2,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A36",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 3,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A37",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 5,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A38",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 6,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A39",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 7,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A40",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 8,
+                    "y": 6
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A41",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 0,
+                    "y": 7
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A42",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 1,
+                    "y": 7
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A43",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 2,
+                    "y": 7
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A44",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 3,
+                    "y": 7
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A45",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 5,
+                    "y": 7
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A46",
+                    "lotId": "lotA",
+                    "occupied": true,
+                    "x": 6,
+                    "y": 7
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A47",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 7,
+                    "y": 7
+                },
+                {
+                    "graphNodeId": -1,
+                    "id": "A48",
+                    "lotId": "lotA",
+                    "occupied": false,
+                    "x": 8,
+                    "y": 7
                 }
             ]
         }
