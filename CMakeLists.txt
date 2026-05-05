@@ -12,25 +12,42 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
 
+# =========================
+# Domain library
+# =========================
+
 add_library(erkenly_domain STATIC
     domain/Gate.hpp
     domain/Gate.cpp
+
     domain/ParkingLot.hpp
     domain/ParkingLot.cpp
+
     domain/ParkingModel.hpp
     domain/ParkingModel.cpp
+
     domain/ParkingSpot.hpp
     domain/ParkingSpot.cpp
+
     domain/coordinate.h
-    domain/graph.h domain/graph.cpp
-    domain/routeplanner.h domain/routeplanner.cpp
+
+    domain/graph.h
+    domain/graph.cpp
+
+    domain/routeplanner.h
+    domain/routeplanner.cpp
 )
 
 target_include_directories(erkenly_domain PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/domain
 )
 
+# =========================
+# Networking library
+# =========================
+
 add_library(erkenly_networking STATIC
+    networking/IParkingClient.h
     networking/ParkingClient.h
     networking/ParkingClient.cpp
 )
@@ -43,11 +60,16 @@ target_link_libraries(erkenly_networking PUBLIC
     Qt${QT_VERSION_MAJOR}::Network
 )
 
+# =========================
+# Main Qt application
+# =========================
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Erkenly
         MANUAL_FINALIZATION
 
         ui/main.cpp
+
         ui/mainwindow.h
         ui/mainwindow.cpp
 
@@ -57,18 +79,19 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ui/mapview.h
         ui/mapview.cpp
 
-
         app/AppController.h
         app/AppController.cpp
-        domain/coordinate.h
     )
 else()
     add_executable(Erkenly
         ui/main.cpp
+
         ui/mainwindow.h
         ui/mainwindow.cpp
+
         ui/lotoverview.h
         ui/lotoverview.cpp
+
         ui/mapview.h
         ui/mapview.cpp
 
@@ -97,4 +120,51 @@ set_target_properties(Erkenly PROPERTIES
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Erkenly)
+endif()
+
+# =========================
+# Unit tests
+# =========================
+
+include(CTest)
+
+if(BUILD_TESTING)
+    include(FetchContent)
+
+    FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
+    )
+
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+    FetchContent_MakeAvailable(googletest)
+
+    add_executable(erkenly_tests
+        tests/domain_tests.cpp
+        tests/controller_mock_tests.cpp
+
+        app/AppController.h
+        app/AppController.cpp
+    )
+
+    target_include_directories(erkenly_tests PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/app
+        ${CMAKE_CURRENT_SOURCE_DIR}/domain
+        ${CMAKE_CURRENT_SOURCE_DIR}/networking
+    )
+
+    target_link_libraries(erkenly_tests PRIVATE
+        Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Network
+        erkenly_domain
+        erkenly_networking
+        GTest::gmock_main
+    )
+
+    include(GoogleTest)
+
+    gtest_discover_tests(erkenly_tests
+        DISCOVERY_MODE PRE_TEST
+    )
 endif()

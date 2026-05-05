@@ -677,7 +677,13 @@ MapView::MapView(const QString &lotId,
     )");
 
     connect(backBtn, &QPushButton::clicked, this, [this]() {
-        if (m_previousWindow) m_previousWindow->show();
+        if (m_previousWindow) {
+            // Return to the lot dashboard at the current map window position.
+            m_previousWindow->move(this->pos());
+            m_previousWindow->show();
+            m_previousWindow->raise();
+            m_previousWindow->activateWindow();
+        }
         hide();
     });
 
@@ -840,7 +846,10 @@ void MapView::onNavigateClicked()
 void MapView::closeEvent(QCloseEvent *event)
 {
     if (m_previousWindow) {
+        m_previousWindow->move(this->pos());
         m_previousWindow->show();
+        m_previousWindow->raise();
+        m_previousWindow->activateWindow();
     }
     QMainWindow::closeEvent(event);
 }

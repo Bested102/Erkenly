@@ -184,6 +184,9 @@ MainWindow::MainWindow(QWidget *parent)
             });
         }
 
+        // Keep navigation in the same screen position instead of letting
+        // the next top-level window appear back at the default/center position.
+        lotOverviewWindow->move(this->pos());
         lotOverviewWindow->show();
         lotOverviewWindow->raise();
         lotOverviewWindow->activateWindow();
@@ -194,5 +197,5 @@ MainWindow::MainWindow(QWidget *parent)
         close();
     });
 
-    controller->connectToServer("127.0.0.1", 5555);
+    controller->connectToServer("trolley.proxy.rlwy.net", 24684);
 }

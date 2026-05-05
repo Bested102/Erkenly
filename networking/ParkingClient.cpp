@@ -5,7 +5,7 @@
 #include <QJsonParseError>
 
 ParkingClient::ParkingClient(QObject *parent)
-    : QObject(parent)
+    : IParkingClient(parent)
 {
     connect(&socket, &QTcpSocket::readyRead, this, &ParkingClient::onReadyRead);
     connect(&socket, &QTcpSocket::connected, this, &ParkingClient::onConnected);

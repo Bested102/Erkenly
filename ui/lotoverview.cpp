@@ -139,7 +139,14 @@ LotOverview::LotOverview(AppController *appController, QWidget *previousWindow)
 
     // --- Connections ---
     connect(backButton, &QPushButton::clicked, this, [this]() {
-        if (m_previousWindow) m_previousWindow->show();
+        if (m_previousWindow) {
+            // Return to the previous window at the current window position.
+            // This prevents the UI from jumping back to the center of the screen.
+            m_previousWindow->move(this->pos());
+            m_previousWindow->show();
+            m_previousWindow->raise();
+            m_previousWindow->activateWindow();
+        }
         hide();
     });
 
@@ -240,6 +247,8 @@ void LotOverview::refreshGrid()
                 mapViewWindow = nullptr;
             });
 
+            // Open the map at the same screen position as the dashboard.
+            mapViewWindow->move(this->pos());
             mapViewWindow->show();
             mapViewWindow->raise();
             mapViewWindow->activateWindow();
@@ -259,7 +268,10 @@ void LotOverview::refreshGrid()
 void LotOverview::closeEvent(QCloseEvent *event)
 {
     if (m_previousWindow) {
+        m_previousWindow->move(this->pos());
         m_previousWindow->show();
+        m_previousWindow->raise();
+        m_previousWindow->activateWindow();
     }
     QMainWindow::closeEvent(event);
 }

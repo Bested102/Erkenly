@@ -1,27 +1,21 @@
 #pragma once
 
-#include <QObject>
+#include "IParkingClient.h"
+
 #include <QTcpSocket>
 #include <QString>
 
-class ParkingClient : public QObject
+class ParkingClient : public IParkingClient
 {
     Q_OBJECT
 
 public:
     explicit ParkingClient(QObject *parent = nullptr);
 
-    void connectToServer(const QString &host, quint16 port);
-    void requestSnapshot();
-    void reportSpot(const QString &lotId, const QString &spotId, bool occupied);
-    bool isConnected() const;
-
-signals:
-    void connected();
-    void disconnected();
-    void snapshotReceived(const QByteArray &data);
-    void ackReceived(const QByteArray &data);
-    void errorOccurred(const QString &message);
+    void connectToServer(const QString &host, quint16 port) override;
+    void requestSnapshot() override;
+    void reportSpot(const QString &lotId, const QString &spotId, bool occupied) override;
+    bool isConnected() const override;
 
 private slots:
     void onReadyRead();

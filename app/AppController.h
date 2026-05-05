@@ -8,6 +8,7 @@
 
 #include "ParkingModel.hpp"
 #include "ParkingClient.h"
+#include "IParkingClient.h"
 #include "routeplanner.h"
 
 class AppController : public QObject
@@ -17,6 +18,8 @@ class AppController : public QObject
 public:
     explicit AppController(QObject *parent = nullptr);
 
+    explicit AppController(IParkingClient *parkingClient, QObject *parent = nullptr);
+
     void connectToServer(const QString &host, quint16 port);
     void requestSnapshot();
     void reportSpot(const QString &lotId, const QString &spotId, bool occupied);
@@ -25,18 +28,14 @@ public:
     ParkingModel& getModel();
     QString getConnectionStatus() const;
 
-    // Route planning: returns path node IDs from gateId to nearest free spot.
-    // chosenSpot is set to the target spot ID. Returns empty list if no route found.
     QStringList findRouteToNearestFreeSpot(const QString &lotId,
                                            const QString &gateId,
                                            QString &chosenSpot) const;
 
-    // Route planning: returns path node IDs from start to goal.
     QStringList findRoute(const QString &lotId,
                           const QString &startId,
                           const QString &goalId) const;
 
-    // Converts a route node list into drawable map coordinates.
     QList<QPointF> routeGeometry(const QString &lotId,
                                  const QStringList &path) const;
 
@@ -56,9 +55,14 @@ private slots:
     void onClientError(const QString &message);
 
 private:
+    void connectClientSignals();
     void rebuildModelFromSnapshot(const QByteArray &data);
 
     ParkingModel model;
-    ParkingClient client;
+
+    ParkingClient realClient;
+
+    IParkingClient *client = nullptr;
+
     QString connectionStatus = "Disconnected";
 };
