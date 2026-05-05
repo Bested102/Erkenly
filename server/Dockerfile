@@ -16,6 +16,8 @@ WORKDIR /app
 
 COPY . /app
 
+RUN rm -rf build server/build
+
 RUN cmake -S server -B server/build -G Ninja -DCMAKE_BUILD_TYPE=Release
 RUN cmake --build server/build
 

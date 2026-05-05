@@ -1,3 +1,0 @@
-D:/AUC/CS2 Lab/Erkenly/server/build/CMakeFiles/parking_server.dir
-D:/AUC/CS2 Lab/Erkenly/server/build/CMakeFiles/edit_cache.dir
-D:/AUC/CS2 Lab/Erkenly/server/build/CMakeFiles/rebuild_cache.dir
